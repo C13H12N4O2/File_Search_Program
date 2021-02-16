@@ -69,9 +69,9 @@ namespace File_Search_Program
             try
             {
                 files_list = Directory.GetFiles(dir, str);
-                for (int i = 0; i != files_list.Length; ++i)
+                foreach (var i in files_list)
                 {
-                    ListViewItem item1 = new ListViewItem(files_list[i], 0);
+                    ListViewItem item1 = new ListViewItem(i);
                     FileInfo finfo = new FileInfo(files_list[i]);
                     item1.SubItems.Add(finfo.Length.ToString() + " Byte");
                     item1.SubItems.Add(finfo.CreationTime.ToString());
